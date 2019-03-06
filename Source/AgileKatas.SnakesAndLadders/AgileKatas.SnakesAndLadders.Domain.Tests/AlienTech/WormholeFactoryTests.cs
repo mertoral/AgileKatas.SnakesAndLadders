@@ -9,9 +9,9 @@ namespace AgileKatas.SnakesAndLadders.Domain.Tests.AlienTech
     [TestFixture]
     public class WormholeFactoryTests
     {
-        private IGameSettings _gameSettings; //= Substitute.For<IGameSettings>()
-        private IWormholeValidator _wormholeValidator; //= Substitute.For<IGameSettings>()
-        private IRandomWrapper _randomWrapper; //= Substitute.For<IGameSettings>()
+        private IGameSettings _gameSettings; 
+        private IWormholeValidator _wormholeValidator; 
+        private IRandomWrapper _randomWrapper; 
 
         [SetUp]
         public void Setup()
