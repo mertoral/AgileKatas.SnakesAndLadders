@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders.Domain", "AgileKatas.SnakesAndLadders\AgileKatas.SnakesAndLadders.Domain.csproj", "{2F38B213-BB62-4CF0-8509-DA9B903C5D8D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders.Domain.Tests", "AgileKatas.SnakesAndLadders.Domain.Tests\AgileKatas.SnakesAndLadders.Domain.Tests.csproj", "{E1D6ECAA-F396-4F1A-AB2A-93CAC6076299}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileKatas.SnakesAndLadders.Api", "AgileKatas.SnakesAndLadders.Api\AgileKatas.SnakesAndLadders.Api.csproj", "{84C96719-5770-4F96-B921-80FE560A201A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders.Api", "AgileKatas.SnakesAndLadders.Api\AgileKatas.SnakesAndLadders.Api.csproj", "{84C96719-5770-4F96-B921-80FE560A201A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders.Domain", "AgileKatas.SnakesAndLadders.Domain\AgileKatas.SnakesAndLadders.Domain.csproj", "{EE694AB2-72E8-4D8C-8BD2-FCC68A23E375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F38B213-BB62-4CF0-8509-DA9B903C5D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F38B213-BB62-4CF0-8509-DA9B903C5D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F38B213-BB62-4CF0-8509-DA9B903C5D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F38B213-BB62-4CF0-8509-DA9B903C5D8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1D6ECAA-F396-4F1A-AB2A-93CAC6076299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1D6ECAA-F396-4F1A-AB2A-93CAC6076299}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1D6ECAA-F396-4F1A-AB2A-93CAC6076299}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{84C96719-5770-4F96-B921-80FE560A201A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84C96719-5770-4F96-B921-80FE560A201A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84C96719-5770-4F96-B921-80FE560A201A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE694AB2-72E8-4D8C-8BD2-FCC68A23E375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE694AB2-72E8-4D8C-8BD2-FCC68A23E375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE694AB2-72E8-4D8C-8BD2-FCC68A23E375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE694AB2-72E8-4D8C-8BD2-FCC68A23E375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
