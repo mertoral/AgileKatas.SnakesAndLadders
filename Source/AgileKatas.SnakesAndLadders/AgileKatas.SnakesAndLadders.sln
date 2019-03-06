@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders", "AgileKatas.SnakesAndLadders\AgileKatas.SnakesAndLadders.csproj", "{2F38B213-BB62-4CF0-8509-DA9B903C5D8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders.Domain", "AgileKatas.SnakesAndLadders\AgileKatas.SnakesAndLadders.Domain.csproj", "{2F38B213-BB62-4CF0-8509-DA9B903C5D8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders.Tests", "AgileKatas.SnakesAndLadders.Domain.Tests\AgileKatas.SnakesAndLadders.Tests.csproj", "{E1D6ECAA-F396-4F1A-AB2A-93CAC6076299}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileKatas.SnakesAndLadders.Domain.Tests", "AgileKatas.SnakesAndLadders.Domain.Tests\AgileKatas.SnakesAndLadders.Domain.Tests.csproj", "{E1D6ECAA-F396-4F1A-AB2A-93CAC6076299}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

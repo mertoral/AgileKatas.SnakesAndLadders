@@ -1,6 +1,6 @@
-﻿using AgileKatas.SnakesAndLadders.AlienTech;
+﻿using AgileKatas.SnakesAndLadders.Domain.AlienTech;
 
-namespace AgileKatas.SnakesAndLadders.AlienTech
+namespace AgileKatas.SnakesAndLadders.Domain.AlienTech
 {
     public interface IWormholeValidator
     {

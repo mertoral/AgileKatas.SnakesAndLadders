@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using AgileKatas.SnakesAndLadders.Boards;
-using AgileKatas.SnakesAndLadders.Dice;
+using AgileKatas.SnakesAndLadders.Domain.Boards;
+using AgileKatas.SnakesAndLadders.Domain.Dice;
 
-namespace AgileKatas.SnakesAndLadders
+namespace AgileKatas.SnakesAndLadders.Domain
 {
     public class Game
     {

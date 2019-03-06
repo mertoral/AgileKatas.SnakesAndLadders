@@ -1,8 +1,8 @@
 ﻿using System;
-using AgileKatas.SnakesAndLadders.AlienTech;
-using AgileKatas.SnakesAndLadders.Wrappers;
+using AgileKatas.SnakesAndLadders.Domain.AlienTech;
+using AgileKatas.SnakesAndLadders.Domain.Wrappers;
 
-namespace AgileKatas.SnakesAndLadders.AlienTech
+namespace AgileKatas.SnakesAndLadders.Domain.AlienTech
 {
     public class WormholeFactory : IWormholeFactory
     {

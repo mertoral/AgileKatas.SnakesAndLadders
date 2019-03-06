@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AgileKatas.SnakesAndLadders.AlienTech;
-using AgileKatas.SnakesAndLadders.Wrappers;
+﻿using AgileKatas.SnakesAndLadders.Domain.AlienTech;
+using AgileKatas.SnakesAndLadders.Domain.Wrappers;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
-namespace AgileKatas.SnakesAndLadders.Tests.AlienTech
+namespace AgileKatas.SnakesAndLadders.Domain.Tests.AlienTech
 {
     [TestFixture]
     public class WormholeFactoryTests

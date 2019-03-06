@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using AgileKatas.SnakesAndLadders.AlienTech;
+using AgileKatas.SnakesAndLadders.Domain.AlienTech;
 using FluentAssertions;
 using NUnit.Framework;
 

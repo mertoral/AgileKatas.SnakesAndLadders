@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AgileKatas.SnakesAndLadders.Dice
+namespace AgileKatas.SnakesAndLadders.Domain.Dice
 {
     class Die : IDie
     {

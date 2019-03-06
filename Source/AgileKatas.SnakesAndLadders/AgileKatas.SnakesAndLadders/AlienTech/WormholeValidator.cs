@@ -1,4 +1,4 @@
-﻿namespace AgileKatas.SnakesAndLadders.AlienTech
+﻿namespace AgileKatas.SnakesAndLadders.Domain.AlienTech
 {
     public class WormholeValidator : IWormholeValidator
     {

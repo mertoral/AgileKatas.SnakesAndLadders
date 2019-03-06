@@ -1,4 +1,4 @@
-﻿namespace AgileKatas.SnakesAndLadders.Wrappers
+﻿namespace AgileKatas.SnakesAndLadders.Domain.Wrappers
 {
     public interface IRandomWrapper
     {

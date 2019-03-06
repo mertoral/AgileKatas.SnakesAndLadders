@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using AgileKatas.SnakesAndLadders.AlienTech;
+using AgileKatas.SnakesAndLadders.Domain.AlienTech;
 
-namespace AgileKatas.SnakesAndLadders.Boards
+namespace AgileKatas.SnakesAndLadders.Domain.Boards
 {
     public class BoardFactory : IBoardFactory
     {

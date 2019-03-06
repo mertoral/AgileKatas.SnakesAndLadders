@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>AgileKatas.SnakesAndLadders</RootNamespace>
-    <AssemblyName>AgileKatas.SnakesAndLadders</AssemblyName>
+    <RootNamespace>AgileKatas.SnakesAndLadders.Domain</RootNamespace>
+    <AssemblyName>AgileKatas.SnakesAndLadders.Domain</AssemblyName>
   </PropertyGroup>
 
 </Project>

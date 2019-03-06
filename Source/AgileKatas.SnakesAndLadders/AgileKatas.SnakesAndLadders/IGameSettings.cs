@@ -1,4 +1,4 @@
-﻿namespace AgileKatas.SnakesAndLadders
+﻿namespace AgileKatas.SnakesAndLadders.Domain
 {
     public interface IGameSettings
     {

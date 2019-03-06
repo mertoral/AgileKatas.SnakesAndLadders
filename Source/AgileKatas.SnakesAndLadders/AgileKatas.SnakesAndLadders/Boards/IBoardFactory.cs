@@ -1,4 +1,4 @@
-﻿namespace AgileKatas.SnakesAndLadders.Boards
+﻿namespace AgileKatas.SnakesAndLadders.Domain.Boards
 {
     public interface IBoardFactory
     {

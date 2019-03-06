@@ -1,4 +1,4 @@
-﻿namespace AgileKatas.SnakesAndLadders.Dice
+﻿namespace AgileKatas.SnakesAndLadders.Domain.Dice
 {
     public interface IDie
     {

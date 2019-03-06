@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AgileKatas.SnakesAndLadders.Wrappers
+namespace AgileKatas.SnakesAndLadders.Domain.Wrappers
 {
     public class RandomWrapper : IRandomWrapper
     {

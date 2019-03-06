@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AgileKatas.SnakesAndLadders.Boards
+namespace AgileKatas.SnakesAndLadders.Domain.Boards
 {
     public class Board
     {
