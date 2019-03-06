@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>AgileKatas.SnakesAndLadders</RootNamespace>
+    <AssemblyName>AgileKatas.SnakesAndLadders</AssemblyName>
+  </PropertyGroup>
+
+</Project>
