@@ -2,22 +2,20 @@
 {
     public class Token
     {
-        private int _currentSquare;
+        public int CurrentSquare { get; private set; }
         public int Player { get; }
-
+        
         public int RemainingMoves { get; set; } = 0;
 
         public Token(int player, int startAt)
         {
             Player = player;
-            _currentSquare = startAt;
+            CurrentSquare = startAt;
         }
-
-        public int CurrentSquare => _currentSquare;
-
+        
         public void Move()
         {
-            _currentSquare = CurrentSquare + RemainingMoves;
+            CurrentSquare = CurrentSquare + RemainingMoves;
         }
     }
 }

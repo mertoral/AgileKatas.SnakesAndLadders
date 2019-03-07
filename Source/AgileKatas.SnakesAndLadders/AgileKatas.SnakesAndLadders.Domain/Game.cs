@@ -38,7 +38,7 @@ namespace AgileKatas.SnakesAndLadders.Domain
         {
             if (_board.Tokens.First().Player != player)
             {
-                return new ResultOfMovingToken(player, 0, false);
+                return new ResultOfMovingToken(player, 0, 0, false);
             }
 
             Token token = _board.Tokens.First(x => x.Player == player);
@@ -48,7 +48,8 @@ namespace AgileKatas.SnakesAndLadders.Domain
             {
                 return new ResultOfMovingToken(
                     player, 
-                    _board.Ladders[token.CurrentSquare],
+                    token.CurrentSquare, 
+                    _board.Ladders[token.CurrentSquare] - token.CurrentSquare,
                     token.CurrentSquare >= _gameSettings.SquaresOnBoard
                     );
             }
@@ -56,14 +57,15 @@ namespace AgileKatas.SnakesAndLadders.Domain
             if (_board.Snakes.ContainsKey(token.CurrentSquare))
             {
                 return new ResultOfMovingToken(
-                    player, 
-                    _board.Snakes[token.CurrentSquare],
+                    player,
+                    token.CurrentSquare,
+                    token.CurrentSquare -_board.Snakes[token.CurrentSquare],
                     token.CurrentSquare >= _gameSettings.SquaresOnBoard);
             }
 
             _board.Tokens.Enqueue(_board.Tokens.Dequeue());
 
-            return new ResultOfMovingToken(player, 0, token.CurrentSquare >= _gameSettings.SquaresOnBoard);
+            return new ResultOfMovingToken(player, 0, token.CurrentSquare, token.CurrentSquare >= _gameSettings.SquaresOnBoard);
         }
     }
 }
