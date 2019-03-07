@@ -4,18 +4,24 @@ using AgileKatas.SnakesAndLadders.Domain.Dice;
 
 namespace AgileKatas.SnakesAndLadders.Domain
 {
-    public class Game
+    public class Game : IGame
     {
         private readonly IBoardFactory _boardFactory;
         private Board _board;
         private readonly IDie _die;
         private readonly IGameSettings _gameSettings;
+        
 
         public Game(IBoardFactory boardFactory, IDie die, IGameSettings gameSettings)
         {
             _boardFactory = boardFactory;
             _die = die;
             _gameSettings = gameSettings;
+        }
+
+        public Board Board
+        {
+            get { return _board; }
         }
 
         public void Start()
@@ -25,10 +31,10 @@ namespace AgileKatas.SnakesAndLadders.Domain
 
         public ResultOfRollingDie RollDie(int player)
         {
-            if (_board.Tokens.First().Player == player)
+            if (Board.Tokens.First().Player == player)
             {
                 int moves = _die.Roll();
-                _board.Tokens.First().RemainingMoves = moves;
+                Board.Tokens.First().RemainingMoves = moves;
                 return new ResultOfRollingDie(player, moves);
             }
             return new ResultOfRollingDie(player, 0);
@@ -36,34 +42,34 @@ namespace AgileKatas.SnakesAndLadders.Domain
 
         public ResultOfMovingToken MoveToken(int player)
         {
-            if (_board.Tokens.First().Player != player)
+            if (Board.Tokens.First().Player != player)
             {
                 return new ResultOfMovingToken(player, 0, 0, false);
             }
 
-            Token token = _board.Tokens.First(x => x.Player == player);
+            Token token = Board.Tokens.First(x => x.Player == player);
             token.Move();
 
-            if (_board.Ladders.ContainsKey(token.CurrentSquare))
+            if (Board.Ladders.ContainsKey(token.CurrentSquare))
             {
                 return new ResultOfMovingToken(
                     player, 
                     token.CurrentSquare, 
-                    _board.Ladders[token.CurrentSquare] - token.CurrentSquare,
+                    Board.Ladders[token.CurrentSquare] - token.CurrentSquare,
                     token.CurrentSquare >= _gameSettings.SquaresOnBoard
                     );
             }
 
-            if (_board.Snakes.ContainsKey(token.CurrentSquare))
+            if (Board.Snakes.ContainsKey(token.CurrentSquare))
             {
                 return new ResultOfMovingToken(
                     player,
                     token.CurrentSquare,
-                    token.CurrentSquare -_board.Snakes[token.CurrentSquare],
+                    token.CurrentSquare -Board.Snakes[token.CurrentSquare],
                     token.CurrentSquare >= _gameSettings.SquaresOnBoard);
             }
 
-            _board.Tokens.Enqueue(_board.Tokens.Dequeue());
+            Board.Tokens.Enqueue(Board.Tokens.Dequeue());
 
             return new ResultOfMovingToken(player, 0, token.CurrentSquare, token.CurrentSquare >= _gameSettings.SquaresOnBoard);
         }

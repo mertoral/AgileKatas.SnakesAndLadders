@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using AgileKatas.SnakesAndLadders.Api.ViewModels;
+using AgileKatas.SnakesAndLadders.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgileKatas.SnakesAndLadders.Api.Controllers
@@ -7,11 +9,17 @@ namespace AgileKatas.SnakesAndLadders.Api.Controllers
     [ApiController]
     public class GameController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private IGame _game;
+
+        public GameController(IGame game)
         {
-            return new string[] { "value1", "value2" };
+            _game = game;
+        }
+
+        [HttpGet]
+        public ActionResult<BoardViewModel> Start()
+        {
+            _game.Start();
         }
 
         // GET api/values/5
