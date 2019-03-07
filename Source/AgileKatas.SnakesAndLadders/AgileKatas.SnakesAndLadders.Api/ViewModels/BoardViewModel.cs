@@ -9,10 +9,4 @@ namespace AgileKatas.SnakesAndLadders.Api.ViewModels
         public List<LadderViewModel> LadderViewModels => new List<LadderViewModel>();
         public List<SnakeViewModel> SnakeViewModels => new List<SnakeViewModel>();
     }
-
-    public class PlayerViewModel
-    {
-        public int Number { get; set; }
-        public int CurrentSquare { get; set; }
-    }
 }
