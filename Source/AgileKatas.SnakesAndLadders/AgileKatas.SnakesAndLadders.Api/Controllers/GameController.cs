@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AgileKatas.SnakesAndLadders.Api.ViewModels;
 using AgileKatas.SnakesAndLadders.Domain;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ namespace AgileKatas.SnakesAndLadders.Api.Controllers
         [HttpGet]
         public ActionResult<BoardViewModel> Start()
         {
-            _game.Start();
+            throw new NotImplementedException();
         }
 
         // GET api/values/5

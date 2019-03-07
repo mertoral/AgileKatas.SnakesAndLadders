@@ -10,7 +10,8 @@ namespace AgileKatas.SnakesAndLadders.Domain
         private Board _board;
         private readonly IDie _die;
         private readonly IGameSettings _gameSettings;
-        
+
+        public Board Board => _board;
 
         public Game(IBoardFactory boardFactory, IDie die, IGameSettings gameSettings)
         {
@@ -18,24 +19,19 @@ namespace AgileKatas.SnakesAndLadders.Domain
             _die = die;
             _gameSettings = gameSettings;
         }
-
-        public Board Board
-        {
-            get { return _board; }
-        }
-
+        
         public Board Start()
         {
             _board = _boardFactory.Create();
-            return Board;
+            return _board;
         }
 
         public ResultOfRollingDie RollDie(int player)
         {
-            if (Board.Tokens.First().Player == player)
+            if (_board.Tokens.First().Player == player)
             {
                 int moves = _die.Roll();
-                Board.Tokens.First().RemainingMoves = moves;
+                _board.Tokens.First().RemainingMoves = moves;
                 return new ResultOfRollingDie(player, moves);
             }
             return new ResultOfRollingDie(player, 0);
