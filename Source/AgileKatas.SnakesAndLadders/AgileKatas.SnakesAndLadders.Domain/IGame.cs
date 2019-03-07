@@ -1,8 +1,10 @@
-﻿namespace AgileKatas.SnakesAndLadders.Domain
+﻿using AgileKatas.SnakesAndLadders.Domain.Boards;
+
+namespace AgileKatas.SnakesAndLadders.Domain
 {
     public interface IGame
     {
-        void Start();
+        Board Start();
         ResultOfRollingDie RollDie(int player);
         ResultOfMovingToken MoveToken(int player);
     }

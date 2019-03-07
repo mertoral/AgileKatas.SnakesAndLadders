@@ -24,9 +24,10 @@ namespace AgileKatas.SnakesAndLadders.Domain
             get { return _board; }
         }
 
-        public void Start()
+        public Board Start()
         {
             _board = _boardFactory.Create();
+            return Board;
         }
 
         public ResultOfRollingDie RollDie(int player)
