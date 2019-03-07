@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AgileKatas.SnakesAndLadders.Domain\AgileKatas.SnakesAndLadders.Domain.csproj" />
+    <ProjectReference Include="..\AgileKatas.SnakesAndLadders.Util\AgileKatas.SnakesAndLadders.Util.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using AgileKatas.SnakesAndLadders.Api.ViewModels;
 using AgileKatas.SnakesAndLadders.Domain;
+using AgileKatas.SnakesAndLadders.Domain.Boards;
+using AgileKatas.SnakesAndLadders.Util;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgileKatas.SnakesAndLadders.Api.Controllers
@@ -10,17 +12,19 @@ namespace AgileKatas.SnakesAndLadders.Api.Controllers
     [ApiController]
     public class GameController : ControllerBase
     {
-        private IGame _game;
+        private readonly IGame _game;
+        private IMapper<Board, BoardViewModel> _boardMapper;
 
-        public GameController(IGame game)
+        public GameController(IGame game, IMapper<Board, BoardViewModel> boardMapper)
         {
             _game = game;
+            _boardMapper = boardMapper;
         }
 
         [HttpGet]
         public ActionResult<BoardViewModel> Start()
         {
-            throw new NotImplementedException();
+            return _boardMapper.Map(_game.Start());
         }
 
         // GET api/values/5
