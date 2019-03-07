@@ -9,11 +9,17 @@
             _gameSettings = gameSettings;
         }
 
-        public bool Validate(int square, Wormhole wormhole)
+        public bool Validate(Wormhole wormhole)
         {
+            return StaysWithinBoard(wormhole);
+        }
+
+        public bool StaysWithinBoard(Wormhole wormhole)
+        {
+            
             return
-                square + wormhole.Target <= _gameSettings.SquaresOnBoard &&
-                square + wormhole.Target >= 1;
+                wormhole.Target <= _gameSettings.SquaresOnBoard &&
+                wormhole.Target >= 1;
         }
     }
 }

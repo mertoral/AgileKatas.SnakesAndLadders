@@ -23,9 +23,9 @@ namespace AgileKatas.SnakesAndLadders.Domain.AlienTech
 
             do
             {
-                wormhole = new Wormhole(square, direction, _randomWrapper.Next(1, _gameSettings.MaximumTransporterRange));
+                wormhole = new Wormhole(square, direction, _randomWrapper.Next(1, _gameSettings.MaximumWormHoleRange));
 
-            } while (!_wormholeValidator.Validate(square, wormhole));
+            } while (!_wormholeValidator.Validate(wormhole));
 
             return wormhole;
         }

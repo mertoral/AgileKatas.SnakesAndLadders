@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AgileKatas.SnakesAndLadders.Domain.AlienTech;
 
 namespace AgileKatas.SnakesAndLadders.Domain.Boards
@@ -7,7 +8,7 @@ namespace AgileKatas.SnakesAndLadders.Domain.Boards
     public class BoardFactory : IBoardFactory
     {
         private readonly IGameSettings _gameSettings;
-        private IWormholeFactory _wormholeFactory;
+        private readonly IWormholeFactory _wormholeFactory;
         
         public BoardFactory(IGameSettings gameSettings, IWormholeFactory wormholeFactory)
         {
@@ -18,12 +19,14 @@ namespace AgileKatas.SnakesAndLadders.Domain.Boards
         public Board Create()
         {
             Board board = new Board();
-            InitTokens(board);
+            PlaceTokens(board);
+            PlaceLadders(board);
+            PlaceSnakes(board);
 
             return board;
         }
 
-        private void InitTokens(Board board)
+        private void PlaceTokens(Board board)
         {
             List<Token> tokens = new List<Token>();
             
@@ -36,25 +39,39 @@ namespace AgileKatas.SnakesAndLadders.Domain.Boards
             tokens.ForEach(board.Tokens.Enqueue);
         }
 
-        private void InitLadders(Board board)
+        private void PlaceLadders(Board board)
         {
             for (int i = 1; i <= _gameSettings.LadderCount; i++)
             {
-                int square = new Random(_gameSettings.SquaresOnBoard).Next();
+                int square = GenerateSquare(board);
+
                 Wormhole wormhole = _wormholeFactory.Create(square, WormholeDirection.Forward);
                 board.Ladders.Add(square, wormhole.Target);
             }
         }
 
-        private void InitSnakes(Board board)
+        private int GenerateSquare(Board board)
+        {
+            int square = 0;
+            do
+            {
+                square = new Random().Next(_gameSettings.SquaresOnBoard);
+            } while (board.Ladders.Select(x => x.Key).Contains(square) || board.Ladders.Select(x => x.Key).Contains(square));
+
+            return square;
+        }
+
+        private void PlaceSnakes(Board board)
         {
             for (int i = 1; i <= _gameSettings.SnakeCount; i++)
             {
-                int square = new Random(_gameSettings.SquaresOnBoard).Next();
+                int square = new Random().Next(_gameSettings.SquaresOnBoard);
                 Wormhole wormhole = _wormholeFactory.Create(square, WormholeDirection.BackWard);
-                board.Ladders.Add(square, wormhole.Target);
+                board.Snakes.Add(square, wormhole.Target);
             }
         }
+
+
 
         private static void Shuffle<T>(IList<T> list)
         {

@@ -9,7 +9,7 @@ namespace AgileKatas.SnakesAndLadders.Domain
         private readonly IBoardFactory _boardFactory;
         private Board _board;
         private readonly IDie _die;
-        private IGameSettings _gameSettings;
+        private readonly IGameSettings _gameSettings;
 
         public Game(IBoardFactory boardFactory, IDie die, IGameSettings gameSettings)
         {
